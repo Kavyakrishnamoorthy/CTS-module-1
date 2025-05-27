@@ -1,363 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Local Community Event Portal</title>
-  <style>
-    /* Internal CSS for styling */
-
-    /* Welcome Banner */
-    #welcomeBanner {
-      background-color: #007bff; /* blue background */
-      color: white;
-      padding: 15px;
-      font-size: 1.5em;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .highlight {
-      background-color: yellow;
-      font-weight: bold;
-    }
-
-    /* Navigation styling */
-    nav {
-      background: #333;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Table for image gallery */
-    table img.gallery-image {
-      border: 2px solid #555;
-      width: 150px;
-      height: 100px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    table img.gallery-image.enlarged {
-      transform: scale(2);
-      z-index: 10;
-      position: relative;
-    }
-
-    /* Form styling */
-    form {
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: #f9f9f9;
-    }
-    form input, form select, form textarea {
-      width: 100%;
-      padding: 8px;
-      margin: 8px 0 16px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    form button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-size: 1em;
-      border-radius: 4px;
-    }
-    form button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Output confirmation */
-    output {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      color: green;
-    }
-
-    /* Video message */
-    #videoMessage {
-      margin-top: 10px;
-      font-style: italic;
-      color: #007bff;
-      font-weight: bold;
-    }
-
-    /* Geolocation output styling */
-    #geoOutput {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #444;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Embedded style for background */
+        body {
+            background-color: #f5f5f5;
+        }
+    </style>
 </head>
 <body>
+    <h1 style="color: red;">Welcome to the Community Event Portal</h1>
+    <h2>Upcoming Events</h2>
+    <div id="mainHeader">Main Header Banner</div>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#events">Events</a>
-    <a href="#contact">Contact</a>
-    <a href="help.html" target="_blank">Help</a>
-  </nav>
+    <div class="eventCard">
+        <h3>Music Fest</h3>
+        <p>Join us for a night of great music.</p>
+    </div>
 
-  <!-- Welcome Banner -->
-  <div id="welcomeBanner">
-    Welcome to the Community Event Portal! 
-    <span style="color: red; font-weight: bold;">Special Offer: Register now and get 10% off!</span>
-  </div>
+    <div class="eventCard">
+        <h3>Food Carnival</h3>
+        <p>Enjoy a variety of local delicacies.</p>
+    </div>
 
-  <!-- Home Section -->
-  <main id="home">
-    <h1 class="highlight">Upcoming Community Events</h1>
-    <p>Join your neighbors for fun and engaging activities!</p>
-  </main>
+    <ul class="navMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
 
-  <!-- Events Section with Image Gallery -->
-  <section id="events">
-    <h2>Past Events Gallery</h2>
     <table>
-      <tr>
-        <td>
-          <figure>
-            <img src="event1.jpg" alt="Community Picnic" title="Community Picnic" class="gallery-image" ondblclick="toggleImageSize(this)">
-            <figcaption>Community Picnic 2024</figcaption>
-          </figure>
-        </td>
-        <td>
-          <figure>
-            <img src="event2.jpg" alt="Charity Run" title="Charity Run" class="gallery-image" ondblclick="toggleImageSize(this)">
-            <figcaption>Annual Charity Run</figcaption>
-          </figure>
-        </td>
-        <td>
-          <figure>
-            <img src="event3.jpg" alt="Art Workshop" title="Art Workshop" class="gallery-image" ondblclick="toggleImageSize(this)">
-            <figcaption>Art Workshop</figcaption>
-          </figure>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <figure>
-            <img src="event4.jpg" alt="Music Festival" title="Music Festival" class="gallery-image" ondblclick="toggleImageSize(this)">
-            <figcaption>Summer Music Festival</figcaption>
-          </figure>
-        </td>
-        <td>
-          <figure>
-            <img src="event5.jpg" alt="Food Fair" title="Food Fair" class="gallery-image" ondblclick="toggleImageSize(this)">
-            <figcaption>Food Fair</figcaption>
-          </figure>
-        </td>
-        <td>
-          <figure>
-            <img src="event6.jpg" alt="Book Exchange" title="Book Exchange" class="gallery-image" ondblclick="toggleImageSize(this)">
-            <figcaption>Book Exchange Event</figcaption>
-          </figure>
-        </td>
-      </tr>
+        <tr><th>Event</th><th>Date</th></tr>
+        <tr><td>Music Fest</td><td>June 10</td></tr>
+        <tr><td>Food Carnival</td><td>June 12</td></tr>
     </table>
-  </section>
 
-  <!-- Event Registration Form -->
-  <section id="registration">
-    <h2>Register for an Event</h2>
-    <form id="eventForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Your full name" required autofocus>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-
-      <label for="date">Date of Event:</label>
-      <input type="date" id="date" name="date" required>
-
-      <label for="eventType">Event Type:</label>
-      <select id="eventType" name="eventType" required onchange="showEventFee()">
-        <option value="">--Select an event--</option>
-        <option value="picnic" data-fee="10">Community Picnic</option>
-        <option value="run" data-fee="20">Charity Run</option>
-        <option value="workshop" data-fee="15">Art Workshop</option>
-      </select>
-      <div id="feeDisplay" style="font-weight:bold; margin-bottom: 12px;"></div>
-
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" placeholder="Any special requests or questions?" onkeyup="countChars()" maxlength="200"></textarea>
-      <div>Characters typed: <span id="charCount">0</span>/200</div>
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" placeholder="123-456-7890" onblur="validatePhone()" required>
-
-      <button type="submit" onclick="submitForm(event)">Submit Registration</button>
-      <output id="confirmationMsg"></output>
+    <form>
+        <label>Name: <input type="text" class="highlight"></label>
     </form>
-    <button onclick="clearPreferences()">Clear Preferences</button>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@communityevents.org</p>
-    <p>Phone: 555-123-4567</p>
-  </section>
-
-  <!-- Video Invite Section -->
-  <section id="videoInvite">
-    <h2>Event Promo Video</h2>
-    <video id="promoVideo" width="400" controls oncanplay="videoReady()">
-      <source src="promo.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div id="videoMessage"></div>
-  </section>
-
-  <!-- Geolocation for Event Mapping -->
-  <section id="geoSection" style="margin-top: 40px;">
-    <h3>Find Nearby Events</h3>
-    <button id="findNearbyBtn" onclick="findNearbyEvents()">Find Nearby Events</button>
-    <div id="geoOutput"></div>
-  </section>
-
-  <script>
-    // Task 4 - Toggle enlarge image on double click
-    function toggleImageSize(img) {
-      img.classList.toggle('enlarged');
-    }
-
-    // Task 6 - Validate phone on blur
-    function validatePhone() {
-      const phoneInput = document.getElementById('phone');
-      const phone = phoneInput.value.trim();
-      const phonePattern = /^\d{3}-\d{3}-\d{4}$/; // Simple US format 123-456-7890
-      if (!phonePattern.test(phone)) {
-        alert('Please enter a valid phone number in format 123-456-7890.');
-        phoneInput.focus();
-      }
-    }
-
-    // Task 6 - Show event fee on select change
-    function showEventFee() {
-      const select = document.getElementById('eventType');
-      const feeDisplay = document.getElementById('feeDisplay');
-      const selectedOption = select.options[select.selectedIndex];
-      const fee = selectedOption.getAttribute('data-fee');
-      if (fee) {
-        feeDisplay.textContent = `Event fee: $${fee}`;
-        // Save preference in localStorage (Task 8)
-        localStorage.setItem('preferredEvent', select.value);
-      } else {
-        feeDisplay.textContent = '';
-        localStorage.removeItem('preferredEvent');
-      }
-    }
-
-    // Task 6 - Character count in textarea
-    function countChars() {
-      const message = document.getElementById('message').value;
-      document.getElementById('charCount').textContent = message.length;
-    }
-
-    // Task 6 - Submit confirmation
-    function submitForm(event) {
-      event.preventDefault(); // Prevent page reload
-      const confirmation = document.getElementById('confirmationMsg');
-      confirmation.textContent = 'Thank you for registering! We have received your details.';
-    }
-
-    // Task 7 - Video oncanplay event
-    function videoReady() {
-      document.getElementById('videoMessage').textContent = 'Video ready to play';
-    }
-
-    // Task 7 - Warn on page unload if form not submitted
-    window.onbeforeunload = function() {
-      const form = document.getElementById('eventForm');
-      if (!form.checkValidity() || form.querySelector('output').textContent === '') {
-        return 'You have unsaved changes. Are you sure you want to leave?';
-      }
-    };
-
-    // Task 8 - Load preferred event type from localStorage
-    window.onload = function() {
-      const preferredEvent = localStorage.getItem('preferredEvent');
-      if (preferredEvent) {
-        const select = document.getElementById('eventType');
-        select.value = preferredEvent;
-        showEventFee();
-      }
-    };
-
-    // Task 8 - Clear preferences button
-    function clearPreferences() {
-      localStorage.clear();
-      sessionStorage.clear();
-      document.getElementById('eventType').value = '';
-      document.getElementById('feeDisplay').textContent = '';
-      alert('User preferences cleared.');
-    }
-
-    // Task 9 - Geolocation
-    function findNearbyEvents() {
-      const output = document.getElementById('geoOutput');
-      output.textContent = "Locating...";
-
-      if (!navigator.geolocation) {
-        output.textContent = "Geolocation is not supported by your browser.";
-        return;
-      }
-
-      const options = {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0
-      };
-
-      navigator.geolocation.getCurrentPosition(success, error, options);
-
-      function success(position) {
-        const lat = position.coords.latitude.toFixed(6);
-        const lon = position.coords.longitude.toFixed(6);
-        output.textContent = `Latitude: ${lat}, Longitude: ${lon}`;
-      }
-
-      function error(err) {
-        switch(err.code) {
-          case err.PERMISSION_DENIED:
-            output.textContent = "Permission denied. Please allow location access.";
-            break;
-          case err.POSITION_UNAVAILABLE:
-            output.textContent = "Position unavailable.";
-            break;
-          case err.TIMEOUT:
-            output.textContent = "Location request timed out.";
-            break;
-          default:
-            output.textContent = "An unknown error occurred.";
-            break;
-        }
-      }
-    }
-  </script>
-
-  <!-- Footer -->
-  <footer style="text-align:center; margin-top:40px; padding:10px; background:#eee;">
-    &copy; 2025 Local City Council - Community Event Portal
-  </footer>
-
+    <section class="newsArticle">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at feugiat quam...</p>
+    </section>
 </body>
 </html>
